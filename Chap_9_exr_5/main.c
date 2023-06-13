@@ -17,14 +17,14 @@ int main()
 {
     double num1, num2;
     printf("input 2 material number or q for end of prigramm\n");
-    while ((scanf("%lf", &num1)) != 1 || num1 < 0)
+    while ((scanf("%lf", &num1)) != 1 )
     {
         printf("Input num1 agayn\n");
         scanf("%*s");
         num1 = 0;
     }
     printf("Accept num 1: %lf\n", num1);
-    while((scanf("%lf", &num2)) != 1 || num2 < 0)
+    while((scanf("%lf", &num2)) != 1 )
     {
         printf("Input num2 agayn\n");
         scanf("%*s");
