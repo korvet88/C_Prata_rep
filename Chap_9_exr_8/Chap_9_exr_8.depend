@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1687077150 source:c:\users\Дмитрий\documents\Учебные материалы\Программирование\prata_yazyik_progr\Задания из книги\Упражнения\Упражнения к главе 9\Упражнение 8\chap_9_exr_8\main.c
+	<stdio.h>
+	<windows.h>
+
