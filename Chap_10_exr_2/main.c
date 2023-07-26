@@ -11,18 +11,19 @@ v 0.2
 первая фукция работает
 v 0.3
 Вторая функция работает
-
+v 0.4
+Собирается. Третья фукция не копирует массив.
 */
 #include <stdio.h>
 void copy_arr(double [], double [], int );
 void copy_ptr( double *, double * , int );
-//void copy_ptrs(double *, double * , double (*[]) ) ;
+void copy_ptrs(double *, double * , double * ) ;
 int main(void)
 {
     double source[5] = {1.1, 2.2, 3.3, 4.4, 5.5};
     double target1[5];
     double target2[5];
-//    double target3[5];
+    double target3[5];
 
     copy_arr(target1, source, 5);
     for (int i = 0; i < 5; i ++)
@@ -33,7 +34,10 @@ int main(void)
         printf("%0.1f ", target2[i]);
     putchar('\n');
 
-//    copy_ptrs(target3, &source, &source + 5) ;
+    copy_ptrs(&target3, &source, &source + 5) ;
+    for (int i = 0; i < 5; i ++)
+        printf("%0.1f ", target3[i]);
+    putchar('\n');
     return 0;
 }
 
@@ -51,7 +55,10 @@ void copy_ptr(double * ar_copy, double * ar_source, int x)
 
     printf("ptr ok\n"); // fix me
 }
-//void copy_ptrs(target3, source, source + 5)
-//{
-//    printf("ptr ok"); // fix me
-//}
+void copy_ptrs(double * ar_copy, double * ar_source, double * ptr_end)
+{
+    for (ar_source; ptr_end ; ar_source++)
+        *(ar_copy++) = *(ar_source++ );
+
+    printf("ptr ok\n"); // fix me
+}
